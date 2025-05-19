@@ -16,12 +16,12 @@ export default defineConfig([
 		ignores: ["node_modules"],
 	},
 	{
-		files: ["**/*.{js,mjs,cjs}"],
+		files: ["**/src*.{js,mjs,cjs}"],
 		plugins: { js },
 		extends: ["js/recommended"],
 	},
 	{
-		files: ["**/*.{js,mjs,cjs}"],
+		files: ["**/src*.{js,mjs,cjs}"],
 		languageOptions: { globals: globals.node },
 	},
 	eslintConfigPrettierRecommended,

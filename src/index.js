@@ -10,7 +10,7 @@ const app = express();
 
 /**
  * @description Middlewares
- */ 
+ */
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

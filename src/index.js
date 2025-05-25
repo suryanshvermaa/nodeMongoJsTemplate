@@ -1,7 +1,7 @@
 import express from "express";
 import "dotenv/config";
 import router from "./routes/index.js";
-import dbConnect from "./utils/db.js";
+import dbConnect from "./config/db.js";
 import cors from "cors";
 import errorHandler from "./middlewares/error.middleware.js";
 import response from "./utils/response.js";

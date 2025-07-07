@@ -9,3 +9,4 @@ mongo-data
 .env.local
 *.env*
 package-lock.jsonss
+package-lock.json

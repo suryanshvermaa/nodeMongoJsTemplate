@@ -9,8 +9,8 @@ import "dotenv/config";
 const Bucket = process.env.S3_BUCKET;
 
 /**
- * 
- * @param {string} object 
+ *
+ * @param {string} object
  * @returns {Promise<string>}
  */
 export const objectUploadURL = async (object) => {
@@ -28,12 +28,12 @@ export const objectUploadURL = async (object) => {
 };
 
 /**
- * 
- * @param {string} objectUrl 
+ *
+ * @param {string} objectUrl
  * @param {number} time time in seconds
  * @returns {Promise<string>}
  */
-export const signedUrl = async (objectUrl,time) => {
+export const signedUrl = async (objectUrl, time) => {
 	return new Promise(async (resolve, reject) => {
 		const getObjectCommand = new GetObjectCommand({
 			Bucket,
@@ -48,8 +48,8 @@ export const signedUrl = async (objectUrl,time) => {
 };
 
 /**
- * 
- * @param {string} objectUrl 
+ *
+ * @param {string} objectUrl
  * @returns {Promise<boolean>} return yes if object deleted
  */
 export const deleteObject = async (objectUrl) => {

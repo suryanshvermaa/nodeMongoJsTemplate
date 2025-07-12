@@ -1,6 +1,5 @@
 node_modules
 pnpm-lock.yaml
-.vscode
 mongo-data
 *.log
 *.local

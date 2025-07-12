@@ -6,6 +6,5 @@ mongo-data
 *.local.*
 .env
 .env.local
-*.env*
 package-lock.jsonss
 package-lock.json

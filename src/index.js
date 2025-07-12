@@ -20,21 +20,19 @@ app.use("/", router);
  * @description connect to database
  */
 dbConnect().catch(() => {
-	process.exit(1);
+	process.exit();
 });
 
 /**
- * @description health check route
- * @route GET /health
- * @access public
- * @returns {object} - {status: number, message: string, data: null}
+ *
+ * @description health route
+ * @route POST /health
+ * @access Public
+ * @param {import("express").Request} req
+ * @param {import("express").Response} res
  */
-app.get("/health", (req, res, next) => {
-	try {
-		response(res, 200, "healthy");
-	} catch (err) {
-		next(err);
-	}
+export const createUser = asyncHandler(async (req, res) => {
+	response(res, 200, "healthy route!", { state: "healthy" });
 });
 
 /**

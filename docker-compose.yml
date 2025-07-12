@@ -9,13 +9,14 @@ services:
             - my-db
         environment:
             - PORT=3000
-            - MONGO_URI=mongodb://mydb:mydbpassword@my-db:27017/mydb
+            - DATABASE_URL=postgresql://mydbuser:mydbpassword@localhost:5432/mydb?schema=public
     my-db:
-        image: mongo:latest
+        image: postgres:latest
         ports:
-            - "27017:27017"
+            - "5432:5432"
         environment:
-            - MONGO_INITDB_ROOT_USERNAME=mydb
-            - MONGO_INITDB_ROOT_PASSWORD=mydbpassword
+            - POSTGRES_USER=mydbuser
+            - POSTGRES_DB=mydb
+            - POSTGRES_PASSWORD=mydbpassword
         volumes:
-            - ./mongo-data:/data/db
+            - ./postgres-data:/data/db

@@ -16,15 +16,15 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"@apollo/server": "^4.12.2",
-		"@as-integrations/express5": "^1.1.1",
+		"@aws-sdk/client-s3": "^3.844.0",
+		"@aws-sdk/s3-request-presigner": "^3.844.0",
+		"@prisma/client": "^6.11.1",
 		"bcryptjs": "^3.0.2",
 		"cors": "^2.8.5",
 		"dotenv": "^16.5.0",
 		"express": "^5.1.0",
 		"graphql": "^16.11.0",
-		"jsonwebtoken": "^9.0.2",
-		"mongoose": "^8.14.3"
+		"jsonwebtoken": "^9.0.2"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.26.0",
@@ -34,6 +34,7 @@
 		"globals": "^16.1.0",
 		"husky": "^9.1.7",
 		"nodemon": "^3.1.10",
-		"prettier": "^3.5.3"
+		"prettier": "^3.5.3",
+		"prisma": "^6.11.1"
 	}
 }

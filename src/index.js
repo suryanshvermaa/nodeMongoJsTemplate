@@ -1,13 +1,10 @@
 import express from "express";
 import "dotenv/config";
 import router from "./routes/index.js";
-import dbConnect from "./config/db.js";
 import cors from "cors";
 import errorHandler from "./middlewares/error.middleware.js";
 import response from "./utils/response.js";
-import apolloServer from "./config/apollo";
-import { expressMiddleware } from "@as-integrations/express5";
-import graphqlContext from "./graphql/auth/context.js";
+import asyncHandler from "./utils/asyncHandler.js";
 
 const app = express();
 
@@ -18,13 +15,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/", router);
-
-/**
- * @description connect to database
- */
-dbConnect().catch(() => {
-	process.exit();
-});
 
 /**
  *
@@ -38,19 +28,6 @@ export const createUser = asyncHandler(async (req, res) => {
 	response(res, 200, "healthy route!", { state: "healthy" });
 });
 
-/**
- * @description apolloServer setup
- */
-const startApolloServer = async () => {
-	await apolloServer.start();
-	app.use(
-		"/graphql",
-		expressMiddleware(apolloServer, {
-			context: graphqlContext,
-		})
-	);
-};
-startApolloServer();
 /**
  * @description Error handling middleware
  * @route *

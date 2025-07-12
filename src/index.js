@@ -5,9 +5,10 @@ import dbConnect from "./config/db.js";
 import cors from "cors";
 import errorHandler from "./middlewares/error.middleware.js";
 import response from "./utils/response.js";
-import apolloServer from "./config/apollo";
+import apolloServer from "./config/apollo.js";
 import { expressMiddleware } from "@as-integrations/express5";
 import graphqlContext from "./graphql/auth/context.js";
+import asyncHandler from "./utils/asyncHandler.js";
 
 const app = express();
 

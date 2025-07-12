@@ -4,7 +4,7 @@ import { verifyToken } from "../../middlewares/auth.middleware.js";
  * @param {{req:import("express").Request,res:import("express").Response}} param0
  * @returns
  */
-const graphqlContext = async ({ req, res }) => {
+const graphqlContext = async ({ req, _res }) => {
 	try {
 		const token =
 			req.headers["token"] || req.headers.authorization?.split(" ")[1];

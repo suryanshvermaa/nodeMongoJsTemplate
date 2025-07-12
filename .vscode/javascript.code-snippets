@@ -9,7 +9,6 @@
 			"* @access Public",
 			"* @param {import(\"express\").Request} req",
 			"* @param {import(\"express\").Response} res",
-			"* @param {import(\"express\").NextFunction} next",
 			"*/",
 			"export const ${1:createUser} = asyncHandler(async (req, res) => {",
 			"    ${2}",

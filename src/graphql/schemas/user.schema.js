@@ -1,9 +1,9 @@
 const userSchema = `#graphql
 type User{
-    _id: String!
+    id: String!
     name: String
     email: String
-    create_at: String
+    createAt: String
 }
 
 type Query{

@@ -13,7 +13,7 @@ export default defineConfig([
 		},
 	},
 	{
-		ignores: ["node_modules"],
+		ignores: ["node_modules", "generated"],
 	},
 	{
 		files: ["**/src*.{js,mjs,cjs}"],

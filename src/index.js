@@ -1,7 +1,6 @@
 import express from "express";
 import "dotenv/config";
 import router from "./routes/index.js";
-import dbConnect from "./config/db.js";
 import cors from "cors";
 import errorHandler from "./middlewares/error.middleware.js";
 import response from "./utils/response.js";
@@ -19,13 +18,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/", router);
-
-/**
- * @description connect to database
- */
-dbConnect().catch(() => {
-	process.exit();
-});
 
 /**
  *

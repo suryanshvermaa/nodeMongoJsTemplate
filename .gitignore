@@ -8,3 +8,5 @@ mongo-data
 .env.local
 package-lock.jsonss
 package-lock.json
+
+/generated/prisma
